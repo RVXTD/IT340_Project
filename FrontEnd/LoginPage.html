@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeBuy - Login</title>
+    <title>PrimeVault - Access Account</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -15,7 +15,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Lucida Console', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -25,10 +25,12 @@
             min-height: 100vh;
         }
 
+        /* UPDATED — Navy gradient + Optimus Prime background */
         .login-left {
             flex: 1;
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(236, 72, 153, 0.9)),
-                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80');
+            background: 
+                linear-gradient(135deg, rgba(78, 14, 118, 0.85), rgba(0, 60, 120, 0.85)),
+                url('https://wallpapercave.com/wp/wp15875904.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -46,7 +48,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.15);
         }
 
         .overlay-content {
@@ -92,6 +94,11 @@
             gap: 12px;
         }
 
+        /* UPDATED — logo circle navy */
+        .logo svg circle {
+            fill: #001f3f;
+        }
+
         .logo span {
             font-size: 24px;
             font-weight: 700;
@@ -117,27 +124,16 @@
             gap: 20px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .label-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         label {
             font-size: 14px;
             font-weight: 600;
             color: #1a1a1a;
         }
 
+        /* UPDATED — forgot link blue */
         .forgot-link {
             font-size: 14px;
-            color: #a855f7;
+            color: #0074D9;
             text-decoration: none;
             font-weight: 500;
         }
@@ -172,10 +168,11 @@
             font-family: inherit;
         }
 
+        /* UPDATED — input focus color */
         input:focus {
             outline: none;
-            border-color: #a855f7;
-            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+            border-color: #0074D9;
+            box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.25);
         }
 
         input::placeholder {
@@ -210,10 +207,11 @@
             display: block;
         }
 
+        /* UPDATED — navy/blue gradient button */
         .btn-primary {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #a855f7, #ec4899);
+            background: linear-gradient(135deg, #001f3f, #0074D9);
             color: white;
             border: none;
             border-radius: 8px;
@@ -227,7 +225,7 @@
 
         .btn-primary:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(168, 85, 247, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 60, 120, 0.3);
         }
 
         .btn-primary:disabled {
@@ -255,6 +253,7 @@
             font-size: 14px;
         }
 
+        /* Google button unchanged, looks good */
         .btn-google {
             width: 100%;
             padding: 14px;
@@ -278,11 +277,6 @@
             border-color: #d5d5d5;
         }
 
-        .btn-google svg {
-            width: 20px;
-            height: 20px;
-        }
-
         .signup-link {
             text-align: center;
             margin-top: 24px;
@@ -290,8 +284,9 @@
             font-size: 14px;
         }
 
+        /* UPDATED — signup link blue */
         .signup-link a {
-            color: #a855f7;
+            color: #0074D9;
             text-decoration: none;
             font-weight: 600;
         }
@@ -348,11 +343,11 @@
                 <div class="logo-section">
                     <div class="logo">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="16" cy="16" r="16" fill="#A855F7" />
-                            <path d="M16 8L20 12L16 16L12 12L16 8Z" fill="white" />
-                            <path d="M16 16L20 20L16 24L12 20L16 16Z" fill="white" />
+                            <circle cx="16" cy="16" r="16" />
+                            <path d="M16 8L20 12L16 16L12 12L16 8Z" fill="blue" />
+                            <path d="M16 16L20 20L16 24L12 20L16 16Z" fill="red" />
                         </svg>
-                        <span>VibeBuy</span>
+                        <span>PrimeVault</span>
                     </div>
                 </div>
 
@@ -415,7 +410,7 @@
                 </form>
 
                 <p class="signup-link">
-                    New to VibeBuy? <a href="RegisterPage.html">Create an account</a>
+                    New to PrimeVault? <a href="RegisterPage.html">Create an account</a>
                 </p>
             </div>
         </div>
@@ -444,22 +439,18 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Hide previous messages
             errorMessage.classList.remove('show');
             successMessage.classList.remove('show');
 
-            // Validate
             if (!email || !password) {
                 showError('Please fill in all fields');
                 return false;
             }
 
-            // Disable button
             submitBtn.disabled = true;
             submitBtn.textContent = 'Signing in...';
 
             try {
-                // [BACKEND_VM_IP_ADDRESS]: Replace 'localhost' with the actual IP of the Backend VM
                 const response = await fetch('http://100.105.55.118:5000/api/login', {
                     method: 'POST',
                     headers: {
@@ -471,12 +462,10 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Store user info
                     localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('userId', data.user.id);
                     localStorage.setItem('userEmail', data.user.email);
 
-                    // Redirect to MFA page
                     window.location.href = 'MfaPage.html';
                 } else {
                     showError(data.message || 'Login failed');
@@ -493,35 +482,19 @@
             return false;
         }
 
-        // Handle form submission
         loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
             handleLogin();
         });
 
-        // Also add click handler to button
         submitBtn.addEventListener('click', function (e) {
             e.preventDefault();
             handleLogin();
         });
 
-        // Handle Google login
         googleBtn.addEventListener('click', function () {
             showError('Google OAuth integration coming soon! This is a demo.');
         });
-
-        // Handle forgot password link
-        document.querySelector('.forgot-link').addEventListener('click', function (e) {
-            e.preventDefault();
-            showError('Password reset feature coming soon! This is a demo.');
-        });
-
-        // Handle create account link
-        document.querySelector('.signup-link a').addEventListener('click', function (e) {
-            e.preventDefault();
-            showError('Registration page coming soon! This is a demo.');
-        });
     </script>
 </body>
-
 </html>
