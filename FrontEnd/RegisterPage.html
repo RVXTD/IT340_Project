@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeBuy - Register</title>
+    <title>PrimeVault - Create Account</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -25,19 +25,22 @@
             min-height: 100vh;
         }
 
+        /* UPDATED — Navy gradient + Optimus Prime image */
         .login-left {
-            flex: 1;
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(236, 72, 153, 0.9)),
-                url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px;
-            color: white;
-            position: relative;
-        }
+    flex: 1;
+    background: 
+        linear-gradient(135deg, rgba(0, 31, 63, 0.85), rgba(0, 60, 120, 0.85)),
+        url('https://wallpapercave.com/iphone-optimus-prime-g1-wallpapers');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    color: white;
+    position: relative;
+}
+
 
         .login-left::before {
             content: '';
@@ -90,6 +93,11 @@
             display: flex;
             align-items: center;
             gap: 12px;
+        }
+
+        /* UPDATED — logo circle navy */
+        .logo svg circle {
+            fill: #001f3f;
         }
 
         .logo span {
@@ -155,10 +163,11 @@
             font-family: inherit;
         }
 
+        /* UPDATED — input focus blue */
         input:focus {
             outline: none;
-            border-color: #a855f7;
-            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+            border-color: #0074D9;
+            box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.25);
         }
 
         input::placeholder {
@@ -193,10 +202,11 @@
             display: block;
         }
 
+        /* UPDATED — navy gradient button */
         .btn-primary {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #a855f7, #ec4899);
+            background: linear-gradient(135deg, #001f3f, #0074D9);
             color: white;
             border: none;
             border-radius: 8px;
@@ -210,7 +220,7 @@
 
         .btn-primary:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(168, 85, 247, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 60, 120, 0.3);
         }
 
         .btn-primary:disabled {
@@ -226,7 +236,7 @@
         }
 
         .signup-link a {
-            color: #a855f7;
+            color: #0074D9;
             text-decoration: none;
             font-weight: 600;
         }
@@ -269,7 +279,7 @@
     <div class="login-container">
         <div class="login-left">
             <div class="overlay-content">
-                <h1>Join the Vibe</h1>
+                <h1>Welcome to the Vault of Primes</h1>
                 <p>Create an account to start your personalized shopping experience today.</p>
             </div>
         </div>
@@ -279,11 +289,11 @@
                 <div class="logo-section">
                     <div class="logo">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="16" cy="16" r="16" fill="#A855F7" />
+                            <circle cx="16" cy="16" r="16" />
                             <path d="M16 8L20 12L16 16L12 12L16 8Z" fill="white" />
                             <path d="M16 16L20 20L16 24L12 20L16 16Z" fill="white" />
                         </svg>
-                        <span>VibeBuy</span>
+                        <span>Prime Vault</span>
                     </div>
                 </div>
 
@@ -292,10 +302,9 @@
 
                 <form class="login-form" id="registerForm">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name">Name (First and Last)</label>
                         <div class="input-wrapper">
-                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="12" cy="7" r="4"></circle>
                             </svg>
@@ -306,10 +315,8 @@
                     <div class="form-group">
                         <label for="email">Email</label>
                         <div class="input-wrapper">
-                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                             <input type="email" id="email" name="email" placeholder="you@example.com" required />
@@ -319,8 +326,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="input-wrapper">
-                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                             </svg>
@@ -331,13 +337,11 @@
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
                         <div class="input-wrapper">
-                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                             </svg>
-                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••"
-                                required />
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required />
                         </div>
                     </div>
 
@@ -380,11 +384,9 @@
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
 
-            // Hide previous messages
             errorMessage.classList.remove('show');
             successMessage.classList.remove('show');
 
-            // Validate
             if (!name || !email || !password || !confirmPassword) {
                 showError('Please fill in all fields');
                 return;
@@ -400,12 +402,10 @@
                 return;
             }
 
-            // Disable button
             submitBtn.disabled = true;
             submitBtn.textContent = 'Creating Account...';
 
             try {
-                // [BACKEND_VM_IP_ADDRESS]: Replace 'localhost' with the actual IP of the Backend VM
                 const backendUrl = 'http://100.105.55.118.:5000/api/register';
 
                 const response = await fetch(backendUrl, {
